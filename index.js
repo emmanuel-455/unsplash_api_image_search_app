@@ -9,5 +9,5 @@ let page = 1;
 
 function searchImages() {
     inputData = inputEl.value;
-    
+    const URL = `https://api.unsplash.com/search/photos?page=${page}&query=${inputData}&client_id=${accessKey}`
 }
