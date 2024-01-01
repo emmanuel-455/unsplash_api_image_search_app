@@ -7,7 +7,17 @@ const showMore = document.getElementById("show-more-button")
 let inputData = "";
 let page = 1;
 
-function searchImages() {
+async function searchImages() {
     inputData = inputEl.value;
     const URL = `https://api.unsplash.com/search/photos?page=${page}&query=${inputData}&client_id=${accessKey}`
+
+    const response = await fetch(URL);
+    const Data = await response.json()
+    const result = Data.result
+
+    if (page === 1) {
+        searchResults.innerHTML = ""
+    }
+
+
 }
